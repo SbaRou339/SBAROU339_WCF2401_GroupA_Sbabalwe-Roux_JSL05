@@ -12,6 +12,12 @@ const songs = [
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
     // Feel free to add even more songs
+    // Additional songs
+    { title: "Bohemian Rhapsody", artist: "Queen", genre: "Rock" },
+    { title: "Smooth Criminal", artist: "Michael Jackson", genre: "Pop" },
+    { title: "Stairway to Heaven", artist: "Led Zeppelin", genre: "Rock" },
+    { title: "Respect", artist: "Aretha Franklin", genre: "R&B" },
+    { title: "Hotel California", artist: "Eagles", genre: "Rock" }
 ];
 
 // Object containing each Guardian's preferred genre
