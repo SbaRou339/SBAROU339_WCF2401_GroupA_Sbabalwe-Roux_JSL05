@@ -36,6 +36,14 @@ function generatePlaylist(guardians, songs) {
     };
 
     // Use the map() function to create playlists for each Guardian
+    const playlists = guardians.map(guardian => {
+        const playlist = {
+            guardian: guardian.name,
+            songs: filterSongsByGenre(guardian.preferredGenre)
+        };
+        return playlist;
+    });
+    return playlists;
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
