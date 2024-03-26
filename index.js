@@ -31,13 +31,13 @@ function generatePlaylist(guardians, songs) {
         return songs.filter(song => song.genre === genre);
     };
 
-    // Use the map() function to create playlists for each Guardian
-    const playlists = guardians.map(guardian => {
+    // Use Object.entries() to iterate over the guardians object
+    const playlists = Object.entries(guardians).map(([guardian, preferredGenre]) => {
         return {
-            guardian: guardian.name,
-            songs: filterSongsByGenre(guardian.preferredGenre)
+            guardian: guardian,
+            songs: filterSongsByGenre(preferredGenre)
         };
-    });
+    })
 
     return playlists;
 }
