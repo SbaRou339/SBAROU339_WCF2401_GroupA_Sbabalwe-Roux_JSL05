@@ -61,14 +61,32 @@ function displayPlaylists(playlists) {
         const songList = document.createElement('ul');
         playlist.forEach(song => {
             const songItem = document.createElement('li');
-            songItem.textContent = song.title;
+            const songTitle = document.createElement('span');
+            songTitle.textContent = `${song.title} by ${song.artist}`; // Display both title and artist
+            songTitle.classList.add('song-title');
+            songTitle.style.color = 'orange'; // Set color to orange
+            songTitle.style.textDecoration = 'underline'; // Add underline effect
+            songItem.appendChild(songTitle);
             songList.appendChild(songItem);
+
+            // Add hover effect using JavaScript to the song title span
+            songTitle.addEventListener('mouseover', function() {
+                songTitle.style.textDecoration = 'none'; // Remove underline on hover
+                songTitle.style.color = '#00FF00'; // Change color on hover
+            });
+
+            songTitle.addEventListener('mouseout', function() {
+                songTitle.style.textDecoration = 'underline'; // Restore underline when not hovering
+                songTitle.style.color = 'orange'; // Restore color when not hovering
+            });
+
         });
 
         playlistElement.appendChild(songList);
         playlistContainer.appendChild(playlistElement);
     });
 }
+
 
 // Call generatePlaylist and display the playlists for each Guardian
 const playlists = generatePlaylist(guardians, songs);
