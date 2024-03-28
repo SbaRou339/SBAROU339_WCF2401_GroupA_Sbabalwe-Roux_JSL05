@@ -61,12 +61,19 @@ function displayPlaylists(playlists) {
         const songList = document.createElement('ul');
         playlist.forEach(song => {
             const songItem = document.createElement('li');
+            
             const songTitle = document.createElement('span');
-            songTitle.textContent = `${song.title} by ${song.artist}`; // Display both title and artist
+            songTitle.textContent = `${song.title}`; // Display title
             songTitle.classList.add('song-title');
             songTitle.style.color = 'orange'; // Set color to orange
             songTitle.style.textDecoration = 'underline'; // Add underline effect
             songItem.appendChild(songTitle);
+
+            //Create a span for the artist
+            const artistSpan = document.createElement('span');
+            artistSpan.textContent = ` by ${song.artist}`; //Display artist
+            songItem.appendChild(artistSpan);
+
             songList.appendChild(songItem);
 
             // Add hover effect using JavaScript to the song title span

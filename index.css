@@ -37,3 +37,7 @@ h1 {
     text-decoration: none; /* Remove underline on hover */
     color: #00FF00; /* Green color on hover */
 }
+
+ul li{
+    list-style: none;
+}
